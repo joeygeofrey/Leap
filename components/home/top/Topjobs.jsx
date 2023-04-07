@@ -3,14 +3,18 @@ import { useState } from 'react';
 import { View, Text, TouchableOpacity, FlatList, ActivityIndicator } from 'react-native';
 import { useRouter } from 'expo-router';
 import styles from './topjobs.style';
-import { icons, SIZES } from '../../../constants';
+import { COLORS, SIZES } from '../../../constants';
 import TopJobCard from '../../common/cards/top/TopJobCard';
+import useFetch from '../../../hook/useFetch';
 
 const Topjobs = () => {
   // initialize router and loading/error states
   const router = useRouter();
-  const isLoading = false;
-  const error = false;
+
+  const { data, isLoading, error } = useFetch('search', {
+    query: 'DevOps Engineer',
+    num_pages: 1
+  })
 
   // render view for featured jobs
   return (
@@ -25,14 +29,14 @@ const Topjobs = () => {
       <View style={styles.cardsContainer}>
         {isLoading ? (
           // display activity indicator if still loading
-          <ActivityIndicator size='large' colors={COLORS.primary} />  
+          <ActivityIndicator size='large' color={COLORS.primary} />  
         ) : error ? (
           // display error message if error occurs
           <Text>Oops. Something's not right here.</Text>
         ) : (
           // else, display featured jobs
           <FlatList 
-            data={[1, 2, 3, 4, 5, 6, 7, 8]}
+            data={data}
             renderItem={({ item }) => (
               <TopJobCard
                 item={item}
