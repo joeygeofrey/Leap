@@ -9,6 +9,7 @@ import { COLORS, icons, images, SIZES } from '../constants';
 const Home = () => {
     // use router hook
     const router = useRouter();
+
     // render safeareaview with white bg
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
@@ -25,12 +26,7 @@ const Home = () => {
             {/* scrollable view */}
             <ScrollView showsVerticalScrollIndicator={false}>
                 {/* main content container */}
-                <View
-                    style={{
-                        flex: 1,
-                        padding: SIZES.medium,
-                    }}
-                />
+                <View style={{ flex: 1, padding: SIZES.medium }}>
                     {/* Welcome component */}
                     <Welcome
 
@@ -45,6 +41,7 @@ const Home = () => {
                     <Nearbyjobs
 
                     />
+                </View>
 
 
             </ScrollView>
