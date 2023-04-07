@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { View, ScrollView, SafeAreaView } from 'react-native';
 import { Stack, useRouter } from 'expo-router';
-import { Topjobs, Popularjobs, Welcome, ScreenHeaderBtn, Nearbyjobs } from '../components';
+import { Topjobs, Welcome, ScreenHeaderBtn, Nearbyjobs } from '../components';
 import { COLORS, icons, images, SIZES } from '../constants';
 
 // define home component
