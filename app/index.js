@@ -28,19 +28,13 @@ const Home = () => {
                 {/* main content container */}
                 <View style={{ flex: 1, padding: SIZES.medium }}>
                     {/* Welcome component */}
-                    <Welcome
-
-                    />
+                    <Welcome />
 
                     {/* Topjobs component */}
-                    <Topjobs
-
-                    />
+                    <Topjobs />
 
                     {/* Nearbyjobs component */}
-                    <Nearbyjobs
-
-                    />
+                    <Nearbyjobs />
                 </View>
 
 
