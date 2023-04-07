@@ -4,7 +4,7 @@
     "web": {
       "bundler": "metro"
     },
-    "name": "job",
-    "slug": "job"
+    "name": "leap",
+    "slug": "leap"
   }
 }
