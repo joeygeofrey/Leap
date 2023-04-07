@@ -1,14 +1,21 @@
-import React from 'react'
-import { View, Text } from 'react-native'
+// import libs and components
+import React from 'react';
+import { TouchableOpacity, Image } from 'react-native';
+import styles from './screenheader.style';
 
-import styles from './screenheader.style'
-
-const ScreenHeaderBtn = () => {
+// ScreenHeaderBtn component
+const ScreenHeaderBtn = ({ iconUrl, dimension, handlePress }) => {
+  // return touchable opacity with an enclosed image
   return (
-    <View>
-      <Text>ScreenHeaderBtn</Text>
-    </View>
+    <TouchableOpacity style={styles.btnContainer} onPress={handlePress}>
+      <Image 
+        source={iconUrl}
+        resizeMode='cover'
+        style={styles.btnImg(dimension)}
+      />
+    </TouchableOpacity>
   )
 }
 
-export default ScreenHeaderBtn
+// export ScreenHeaderBtn component
+export default ScreenHeaderBtn;
