@@ -15,10 +15,10 @@ const Home = () => {
             {/* stack screen */}
             <Stack.Screen
                 options={{
-                    headerStyle: { backgroundColor: COLORS.lightwhite },
+                    headerStyle: { backgroundColor: COLORS.lightWhite },
                     headerShadowVisible: false,
-                    headerLeft: () => ( <ScreenHeaderBtn iconURL={icons.menu} dimenstion="60%" />),
-                    headerRight: () => ( <ScreenHeaderBtn iconURL={images.profile} dimenstion="100%" />),
+                    headerLeft: () => ( <ScreenHeaderBtn iconUrl={icons.menu} dimension="60%" />),
+                    headerRight: () => ( <ScreenHeaderBtn iconUrl={images.profile} dimension="100%" />),
                     headerTitle: ''
                 }}
             />
