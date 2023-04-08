@@ -15,7 +15,7 @@ const TopJobCard = ({ item, selectedJob, handleCardPress }) => {
         <Image
           source={checkImageURL(item.employer_logo)
             ? { uri: item.employer_logo }
-            : require("../../../../assets/images/job.jpg")
+            : require('../../../../assets/images/job.jpg')
           }
           resizeMode='contain'
           style={styles.logoImage}
