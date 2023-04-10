@@ -25,7 +25,7 @@ const TopJobCard = ({ item, selectedJob, handleCardPress }) => {
       <Text style={styles.companyName} numberOfLines={1}>{item.employer_name}</Text>
       <View style={styles.infoContainer}>
         <Text style={styles.jobName(selectedJob, item)} numberOfLines={1}>{item.job_title}</Text>
-        <Text style={styles.location}>{item.job_city}, {item.job_state}</Text>
+        <Text style={styles.location}>{item.job_state}</Text>
       </View>
     </TouchableOpacity>
   )
