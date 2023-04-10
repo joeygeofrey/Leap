@@ -16,6 +16,17 @@ const Topjobs = () => {
     num_pages: 1
   })
 
+  // keep track of current selected job
+  const [selectedJob, setSelectedJob] = useState("");
+
+  // handle job card press
+  const handleCardPress = (item) => {
+    // redirect to job-details route
+    router.push(`/job-details/${item.job_id}`);
+    // set selected job
+    setSelectedJob(item.job_id);
+  };
+
   // render view for featured jobs
   return (
     <View style={styles.container}>
@@ -40,6 +51,8 @@ const Topjobs = () => {
             renderItem={({ item }) => (
               <TopJobCard
                 item={item}
+                selectedJob={selectedJob}
+                handleCardPress={handleCardPress}
               />
             )}
             keyExtractor={item => item?.job_id}
