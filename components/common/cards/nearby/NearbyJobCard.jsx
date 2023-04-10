@@ -1,14 +1,32 @@
-import React from 'react'
-import { View, Text } from 'react-native'
-
+// import libs and components
+import { View, Text, TouchableOpacity, Image } from 'react-native';
 import styles from './nearbyjobcard.style'
+import { checkImageURL } from '../../../../utils';
 
-const NearbyJobCard = () => {
+// functional component that recieves job and navigation function as props
+const NearbyJobCard = ({ job, handleNavigate }) => {
   return (
-    <View>
-      <Text>NearbyJobCard</Text>
-    </View>
+    <TouchableOpacity style={styles.container} onPress={handleNavigate} >
+      <TouchableOpacity style={styles.logoContainer}>
+        {/* check if job has logo, else display placeholder image */}
+        <Image
+          source={checkImageURL(job.employer_logo)
+            ? { uri: job.employer_logo }
+            : require("../../../../assets/images/job.jpg")
+          }
+          resizeMode='contain'
+          style={styles.logoImage}
+        />
+      </TouchableOpacity>
+      <View style={styles.textContainer}>
+        {/* job title */}
+        <Text style={styles.jobName} numberOfLines={1}>{job.job_title}</Text>
+        {/* job type and city */}
+        <Text style={styles.jobType}>{job.job_city}, {job.job_employment_type}</Text>
+      </View>
+    </TouchableOpacity>
   )
 }
 
-export default NearbyJobCard
+// export NearbyJobCard component as default
+export default NearbyJobCard;
