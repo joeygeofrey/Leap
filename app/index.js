@@ -10,10 +10,13 @@ const Home = () => {
     // use router hook
     const router = useRouter();
 
+    // define search term state
+    const [searchTerm, setSearchTerm] = useState('');
+
     // render safeareaview with white bg
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
-            {/* stack screen */}
+            {/* header components */}
             <Stack.Screen
                 options={{
                     headerStyle: { backgroundColor: COLORS.lightWhite },
@@ -23,17 +26,22 @@ const Home = () => {
                     headerTitle: ''
                 }}
             />
-            {/* scrollable view */}
             <ScrollView showsVerticalScrollIndicator={false}>
-                {/* main content container */}
                 <View style={{ flex: 1, padding: SIZES.medium }}>
-                    {/* Welcome component */}
-                    <Welcome />
-
-                    {/* Topjobs component */}
+                    {/* search component */}
+                    <Welcome
+                        searchTerm={searchTerm}
+                        setSearchTerm={setSearchTerm}
+                        handleClick={() => {
+                            if(searchTerm) {
+                                router.push(`/search/${searchTerm}`)
+                            }
+                        }}
+                    />
+                    {/* featured jobs component */}
                     <Topjobs />
 
-                    {/* Nearbyjobs component */}
+                    {/* suggsted jobs component */}
                     <Nearbyjobs />
                 </View>
 
