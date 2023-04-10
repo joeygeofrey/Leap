@@ -1,3 +1,4 @@
+// import necessary modules and components
 import { Text, View, SafeAreaView, ScrollView, ActivityIndicator, RefreshControl } from 'react-native';
 import { Stack, useRouter, useSearchParams } from 'expo-router';
 import { useCallback, useState } from 'react';
@@ -5,19 +6,26 @@ import { Company, JobAbout, JobFooter, JobTabs, ScreenHeaderBtn, Specifics } fro
 import { COLORS, icons, SIZES } from '../../constants';
 import useFetch from '../../hook/useFetch';
 
+// define tabs to be displayed on job details screen
 const tabs = ['About', 'Qualifications', 'Responsibilities'];
 
+// define JobDetails component
 const JobDetails = () => {
+    // get job ID from query parameters
     const params = useSearchParams();
     const router = useRouter();
     
+    // fetch job details using useFetch hook
     const { data, isLoading, error, refetch } = useFetch('job-details', { job_id: params.id })
 
+    // define state for pull-to-refresh feature and active tab
     const [refreshing, setRefreshing] = useState(false);
     const [activeTab, setActiveTab] = useState(tabs[0]);
 
+    // define onRefresh function to handle refreshing ofthe data
     const onRefresh = () => {}
 
+    // helper function to display content for the active tab
     const displayTabContent = () => {
         switch (activeTab) {
             case 'Qualifications':
@@ -41,8 +49,10 @@ const JobDetails = () => {
         }
     }    
 
+    // render JobDetails screen
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
+            {/* render screen header */}
             <Stack.Screen
                 options={{
                     headerStyle: { backgroundColor: COLORS.lightWhite },
@@ -65,7 +75,8 @@ const JobDetails = () => {
                 }}
             />
 
-            <>
+            <>  
+                {/* render job details */}
                 <ScrollView showsVerticalScrollIndicator={false} refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}>
                     {isLoading ? (
                         <ActivityIndicator size="large" color={COLORS.primary} />
@@ -91,7 +102,8 @@ const JobDetails = () => {
                         </View>
                     )}
                 </ScrollView>
-
+                
+                {/* render job footer */}
                 <JobFooter
                     url={
                         data[0]?.job_google_link ??
@@ -103,4 +115,5 @@ const JobDetails = () => {
     )
 }
 
+// export JobDetails component as default export
 export default JobDetails;
