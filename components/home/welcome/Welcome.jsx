@@ -5,33 +5,36 @@ import { useRouter } from 'expo-router';
 import styles from './welcome.style';
 import { icons, SIZES } from '../../../constants';
 
-// define array of job types
+// array of job types
 const jobTypes = ['Full-time', 'Part-time', 'Contractor'];
 
-// define welcome component
-const Welcome = () => {
+// welcome component
+const Welcome = ({ searchTerm, setSearchTerm, handleClick }) => {
+  // use router
   const router = useRouter();
+  // set active job type
   const [activeJobType, setActiveJobType] = useState('Full-time');
   
-  // render view with user name, welcome message, search input, search button, and job types
+  // render view with user name, welcome message, search input bar, search button, and job types
   return (
+    // container for user name and welcome message
     <View>
       <View style={styles.container}>
         <Text style={styles.userName}>Hi Joey</Text>
         <Text style={styles.welcomeMessage}>Find your next adventure!</Text>
       </View>
       
+      {/* Container for search input and search button */}
       <View style={styles.searchContainer}>
         <View style={styles.searchWrapper}>
           <TextInput
             style={styles.searchInput}
-            value=''
-            onChange={() => {}}
+            value={searchTerm}
+            onChangeText={(text) => setSearchTerm(text)}
             placeholder="What do you love to do?"
           />
         </View>
-
-        <TouchableOpacity style={styles.searchBtn} onPress={() => {}}>
+        <TouchableOpacity style={styles.searchBtn} onPress={handleClick}>
           <Image 
             source={icons.search}
             resizeMode='contain'
@@ -40,6 +43,7 @@ const Welcome = () => {
         </TouchableOpacity>
       </View>
 
+      {/* container for job types */}
       <View style={styles.tabsContainer}>
         <FlatList 
           data={jobTypes}
