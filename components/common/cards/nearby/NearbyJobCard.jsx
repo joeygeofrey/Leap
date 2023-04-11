@@ -22,7 +22,7 @@ const NearbyJobCard = ({ job, handleNavigate }) => {
         {/* job title */}
         <Text style={styles.jobName} numberOfLines={1}>{job.job_title}</Text>
         {/* job type and city */}
-        <Text style={styles.jobType}>{job.job_city}, {job.job_employment_type}</Text>
+        <Text style={styles.jobType}>{job.job_city && job.job_employment_type ? `${job.job_city}, ${job.job_employment_type}` : `${job.job_city || job.job_employment_type}`}</Text>
       </View>
     </TouchableOpacity>
   )
