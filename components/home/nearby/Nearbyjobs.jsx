@@ -20,7 +20,7 @@ const Nearbyjobs = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>Nearby Jobs</Text>
+        <Text style={styles.headerTitle}>Suggested Jobs</Text>
         <TouchableOpacity>
           <Text style={styles.headerBtn}>See all</Text>
         </TouchableOpacity>
