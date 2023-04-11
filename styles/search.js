@@ -33,12 +33,12 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: COLORS.tertiary
+        backgroundColor: COLORS.element
     },
     paginationImage: {
         width: '60%',
         height: '60%',
-        tintColor: COLORS.white
+        tintColor: COLORS.primary
     },
     paginationTextBox: {
         width: 30,
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
         borderRadius: 2,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: COLORS.white
+        backgroundColor: COLORS.lightWhite
     },
     paginationText: {
         fontFamily: FONT.bold,
