@@ -6,7 +6,8 @@ const styles = StyleSheet.create({
   container: (selectedJob, item) => ({
     width: 250,
     padding: SIZES.xLarge,
-    backgroundColor: selectedJob === item.job_id ? COLORS.primary : COLORS.element,
+    backgroundColor:
+      selectedJob === item.job_id ? COLORS.primary : COLORS.element,
     borderRadius: SIZES.medium,
     justifyContent: "space-between",
     ...SHADOWS.medium,

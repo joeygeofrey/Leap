@@ -1,6 +1,6 @@
-import React from 'react'
-import { View, Text } from 'react-native'
-import styles from './specifics.style'
+import React from "react";
+import { View, Text } from "react-native";
+import styles from "./specifics.style";
 
 // functional component that renders title and list of points
 const Specifics = ({ title, points }) => {
@@ -15,10 +15,10 @@ const Specifics = ({ title, points }) => {
             <Text style={styles.pointText}>{item}</Text>
           </View>
         ))}
-      </View>  
+      </View>
     </View>
-  )
-}
+  );
+};
 
 // export Specifics component as default
-export default Specifics
+export default Specifics;

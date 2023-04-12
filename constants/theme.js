@@ -9,7 +9,7 @@ const COLORS = {
   white: "#F3F4F8",
   lightWhite: "#FAFAFC",
 
-  element: "#f0f0f0"
+  element: "#f0f0f0",
 };
 
 const FONT = {

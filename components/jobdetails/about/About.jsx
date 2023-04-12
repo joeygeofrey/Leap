@@ -1,6 +1,6 @@
-import React from 'react';
-import { View, Text } from 'react-native';
-import styles from './about.style';
+import React from "react";
+import { View, Text } from "react-native";
+import styles from "./about.style";
 
 // about component which recieves info as props and renders it
 const About = ({ info }) => {
@@ -12,8 +12,8 @@ const About = ({ info }) => {
         <Text style={styles.contextText}>{info}</Text>
       </View>
     </View>
-  )
-}
+  );
+};
 
 // export About component as default
 export default About;
