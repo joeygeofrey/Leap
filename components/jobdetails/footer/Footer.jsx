@@ -5,7 +5,6 @@ import styles from "./footer.style";
 
 // define footer
 const Footer = ({ url }) => {
-
   // render view for footer component
   return (
     <View style={styles.container}>

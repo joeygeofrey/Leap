@@ -1,7 +1,7 @@
 // import libs and components
-import { View, Text, TouchableOpacity, Image } from 'react-native';
-import styles from './topjobcard.style';
-import { checkImageURL } from '../../../../utils';
+import { View, Text, TouchableOpacity, Image } from "react-native";
+import styles from "./topjobcard.style";
+import { checkImageURL } from "../../../../utils";
 
 // define TopJobCard component
 const TopJobCard = ({ item, selectedJob, handleCardPress }) => {
@@ -13,23 +13,28 @@ const TopJobCard = ({ item, selectedJob, handleCardPress }) => {
       {/* render the logo image */}
       <TouchableOpacity style={styles.logoContainer(selectedJob, item)}>
         <Image
-          source={checkImageURL(item.employer_logo)
-            ? { uri: item.employer_logo }
-            : require('../../../../assets/images/job.jpg')
+          source={
+            checkImageURL(item.employer_logo)
+              ? { uri: item.employer_logo }
+              : require("../../../../assets/images/job.jpg")
           }
-          resizeMode='contain'
+          resizeMode="contain"
           style={styles.logoImage}
         />
-      {/* render company name and job info */}
+        {/* render company name and job info */}
       </TouchableOpacity>
-      <Text style={styles.companyName} numberOfLines={1}>{item.employer_name}</Text>
+      <Text style={styles.companyName} numberOfLines={1}>
+        {item.employer_name}
+      </Text>
       <View style={styles.infoContainer}>
-        <Text style={styles.jobName(selectedJob, item)} numberOfLines={1}>{item.job_title}</Text>
+        <Text style={styles.jobName(selectedJob, item)} numberOfLines={1}>
+          {item.job_title}
+        </Text>
         <Text style={styles.location}>{item.job_state}</Text>
       </View>
     </TouchableOpacity>
-  )
-}
+  );
+};
 
 // export TopJobCard component as default
 export default TopJobCard;

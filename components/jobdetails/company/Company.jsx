@@ -1,9 +1,8 @@
-import React from 'react';
-import { View, Text, Image } from 'react-native';
-import styles from './company.style';
-import { icons } from '../../../constants';
-import { checkImageURL } from '../../../utils';
-
+import React from "react";
+import { View, Text, Image } from "react-native";
+import styles from "./company.style";
+import { icons } from "../../../constants";
+import { checkImageURL } from "../../../utils";
 
 // functional component that renders the details of the company
 const Company = ({ companyLogo, jobTitle, companyName, location }) => {
@@ -11,7 +10,7 @@ const Company = ({ companyLogo, jobTitle, companyName, location }) => {
     <View style={styles.container}>
       <View style={styles.logoBox}>
         {/* company logo, and placeholder if no logo exists */}
-        <Image 
+        <Image
           source={
             checkImageURL(companyLogo)
               ? {
@@ -23,7 +22,7 @@ const Company = ({ companyLogo, jobTitle, companyName, location }) => {
         />
       </View>
 
-        {/* job title */}
+      {/* job title */}
       <View style={styles.jobTitleBox}>
         <Text style={styles.jobTitle}>{jobTitle}</Text>
       </View>
@@ -45,8 +44,8 @@ const Company = ({ companyLogo, jobTitle, companyName, location }) => {
         </View>
       </View>
     </View>
-  )
-}
+  );
+};
 
 // export Company component as default
-export default Company
+export default Company;
